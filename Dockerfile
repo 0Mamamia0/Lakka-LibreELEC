@@ -36,6 +36,7 @@ RUN apt-get update && \
     unzip \
     zstd \
     lzop \
+    p7zip-full \
     # Text processing
     sed \
     gawk \
