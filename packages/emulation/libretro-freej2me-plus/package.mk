@@ -6,7 +6,7 @@ PKG_VERSION="0.1.1-dev"
 PKG_SHA256="53ae919b3ee06fe662bd7083f64a8944680482932698cd7e9f5af682817522c5"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/KGBRecord/freej2me-plus-lakka"
-PKG_URL="https://github.com/KGBRecord/freej2me-plus-lakka/releases/download/${PKG_VERSION}/freej2me-plus-lakka-20251003.tar.gz"
+PKG_URL="https://github.com/KGBRecord/freej2me-plus-lakka/releases/download/${PKG_VERSION}/freej2me-plus-lakka-20251009.tar.gz"
 PKG_DEPENDS_TARGET="toolchain"
 PKG_LONGDESC="FreeJ2ME-Plus Lakka: J2ME emulator with libretro frontend, optimized for Lakka OS (pre-built release)"
 PKG_TOOLCHAIN="manual"
@@ -32,6 +32,7 @@ make_target() {
 makeinstall_target() {
   mkdir -p ${SYSROOT_PREFIX}/usr/lib/cmake/${PKG_NAME}
   cp ${PKG_LIBPATH} ${SYSROOT_PREFIX}/usr/lib/${PKG_LIBNAME}
+  cp ${PKG_BUILD}/src/libretro/freej2me_libretro.info ${SYSROOT_PREFIX}/usr/lib/
   echo "set(${PKG_LIBVAR} ${SYSROOT_PREFIX}/usr/lib/${PKG_LIBNAME})" > ${SYSROOT_PREFIX}/usr/lib/cmake/${PKG_NAME}/${PKG_NAME}-config.cmake
   
   # Install JAR file to RetroArch system directory where the core expects it
