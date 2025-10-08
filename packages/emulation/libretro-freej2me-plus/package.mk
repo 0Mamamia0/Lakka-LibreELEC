@@ -3,7 +3,7 @@
 
 PKG_NAME="libretro-freej2me-plus"
 PKG_VERSION="0.1.1-dev"
-PKG_SHA256="53ae919b3ee06fe662bd7083f64a8944680482932698cd7e9f5af682817522c5"
+PKG_SHA256="d1c5b29c66b54206141fef419017cc20ac855521f0a752d666b4f5a3c6636e21"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/KGBRecord/freej2me-plus-lakka"
 PKG_URL="https://github.com/KGBRecord/freej2me-plus-lakka/releases/download/${PKG_VERSION}/freej2me-plus-lakka-20251009.tar.gz"
