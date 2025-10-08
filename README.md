@@ -8,17 +8,35 @@ Lakka is a lightweight Linux distribution that transforms a small computer into 
 * **User friendly** - Lakka is easy to setup and use. Once installed to your SD card, you just have to put your rom on the card, plug your joypad and enjoy your favorite old games. We also support PS3 and XBox360 controllers so you don't have to buy new ones. 
 * **Low cost** - We try our best to keep the hardware required to run Lakka as cheap as possible. The software is optimized to run fast even on low end computers. The power can be supplied by any micro USB adapter like the one for your smartphone.
 * **Open source** - Our code is free as in freedom and hosted on Github (though the project uses emulators that forbid commercialisation). We accept external contributions, and we do our best to integrate our own patches into upstream projects.
-* **Java Support** - This fork includes Eclipse Temurin OpenJDK 8u422-b05 for extended development capabilities and Java-based applications support.
+* **Enhanced Gaming Platform** - This fork extends Lakka with Java support, J2ME emulation, and planned PortMaster integration for a comprehensive retro + modern gaming experience.
 
-## Java Development Support
+## Enhanced Features
 
-This Lakka fork includes built-in Java development environment with Eclipse Temurin OpenJDK 8u422-b05.
+### Java Development Support ✅
+This Lakka fork includes a fully integrated Java development environment:
 
-### Features:
+**Features:**
 - **Eclipse Temurin OpenJDK 8u422-b05** (includes JRE + development tools)
 - **Cross-platform support** (x86_64, aarch64, arm)
 - **BusyBox compatible** - designed for LibreELEC/Lakka environment
 - **Automatic configuration** - Java available immediately after boot
+
+### J2ME Emulation (In Progress) 🔄
+Adding comprehensive J2ME (Java ME) game support:
+
+**Planned Features:**
+- **FreeJ2ME-Plus Core** - Enhanced J2ME emulator with improved compatibility
+- **Automatic JAR Detection** - Seamless J2ME game loading
+- **Performance Optimizations** - Optimized for embedded hardware
+- **RetroArch Integration** - Full integration with Lakka's interface
+
+### Future: PortMaster Integration 🎯
+Planning to integrate PortMaster for extended gaming capabilities:
+
+**Upcoming Features:**
+- **Game Ports Library** - Access to modern game ports
+- **Easy Installation** - Simple port management system
+- **Extended Compatibility** - Beyond traditional emulation
 
 ### Usage:
 After building and installing this Lakka version, Java is automatically available:
@@ -37,14 +55,30 @@ Java environment is automatically configured with:
 - **Compatibility**: Works with BusyBox ash shell
 - **Persistence**: Configuration survives reboots
 
-## Development Status & Known Issues
+## Development Status & Progress
 
-**⚠️ Work in Progress**: This fork is currently under active development with the following objectives:
+**🚀 Active Development**: This fork is making significant progress with enhanced emulation capabilities:
 
-### Current Goals:
-- ✅ **Java Support**: Adding Eclipse Temurin OpenJDK 8u422-b05
-- 🔄 **FreeJ2ME-Plus Integration**: Working on built-in FreeJ2ME-Plus emulator
-- 🔍 **Build System Optimization**: Resolving compilation and dependency issues
+### Completed Features:
+- ✅ **Java Support**: Successfully integrated Eclipse Temurin OpenJDK 8u422-b05
+  - Built and tested across multiple platforms (x86_64, aarch64, arm)
+  - Full JRE + development tools available
+  - Automatic configuration and persistence
+- ✅ **Build System**: Successfully resolved major compilation issues
+- ✅ **Cross-platform Compatibility**: Confirmed working on target hardware
+
+### Current Work in Progress:
+- 🔄 **FreeJ2ME-Plus Integration**: Integrating FreeJ2ME-Plus emulator as built-in core
+  - libretro-freej2me-plus package created and configured
+  - Working on proper core info and system integration
+  - Testing J2ME game compatibility and performance
+- 🔄 **Core Library Integration**: Ensuring all dependencies are properly bundled
+
+### Future Roadmap:
+- 🎯 **PortMaster Integration**: Planning to add PortMaster for extended game porting capabilities
+  - Will enable easy installation of ported games
+  - Enhanced gaming ecosystem beyond traditional emulation
+- 🎯 **Enhanced Gaming Hub**: Creating comprehensive retro + modern gaming platform
 
 ### Known Issues:
 - **DNS/Network Restrictions**: Build process encounters frequent failures due to regional DNS blocking of source repositories
@@ -67,7 +101,21 @@ If you're experiencing similar DNS/network issues during build:
 3. Use Docker with pre-cached layers when possible
 4. Contact maintainer for alternative download sources
 
-**Note**: This is a personal fork focusing on Java and J2ME emulation capabilities. Stability and compatibility testing is ongoing.
+**Note**: This is an enhanced fork focusing on comprehensive retro and modern gaming capabilities. Active development with regular testing and improvements.
+
+## Development Progress Tracking
+
+### Build Status:
+- **Java Integration**: ✅ Successfully built and integrated
+- **FreeJ2ME-Plus Core**: 🔄 Package created, working on built-in integration
+- **PortMaster Support**: 📋 Planned for future releases
+
+### Contributing:
+This fork welcomes contributions! Areas of focus:
+- J2ME game compatibility testing
+- Performance optimizations for embedded hardware
+- PortMaster integration development
+- Cross-platform testing and validation
 
 ## Installation instructions
 
