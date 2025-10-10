@@ -15,6 +15,11 @@ PKG_LIBNAME="freej2me_libretro.so"
 PKG_LIBPATH="src/libretro/${PKG_LIBNAME}"
 PKG_LIBVAR="FREEJ2ME_PLUS_LIB"
 
+unpack_target() {
+  mkdir -p ${PKG_BUILD}
+  tar -xzf ${SOURCES}/${PKG_NAME}/${PKG_NAME}-${PKG_VERSION}.tar.gz -C ${PKG_BUILD} --strip-components=1
+}
+
 configure_target() {
   # Nothing to configure - using pre-built release
   :
@@ -25,13 +30,14 @@ make_target() {
   echo "Using pre-built FreeJ2ME-Plus release..."
   echo "Libretro core: ${PKG_BUILD}/${PKG_LIBPATH}"
   echo "JAR files: ${PKG_BUILD}/build/"
-  ls -la ${PKG_BUILD}/build/
+  ls -la ${PKG_BUILD}/
   ls -la ${PKG_BUILD}/src/libretro/
+  ls -la ${PKG_BUILD}/build/
 }
 
 makeinstall_target() {
   mkdir -p ${SYSROOT_PREFIX}/usr/lib/cmake/${PKG_NAME}
-  cp ${PKG_LIBPATH} ${SYSROOT_PREFIX}/usr/lib/${PKG_LIBNAME}
+  cp ${PKG_BUILD}/${PKG_LIBPATH} ${SYSROOT_PREFIX}/usr/lib/${PKG_LIBNAME}
   cp ${PKG_BUILD}/src/libretro/freej2me_libretro.info ${SYSROOT_PREFIX}/usr/lib/
   echo "set(${PKG_LIBVAR} ${SYSROOT_PREFIX}/usr/lib/${PKG_LIBNAME})" > ${SYSROOT_PREFIX}/usr/lib/cmake/${PKG_NAME}/${PKG_NAME}-config.cmake
   
