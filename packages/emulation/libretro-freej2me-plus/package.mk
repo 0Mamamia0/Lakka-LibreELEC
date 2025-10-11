@@ -12,7 +12,7 @@ PKG_LONGDESC="FreeJ2ME-Plus Lakka: J2ME emulator with libretro frontend, optimiz
 PKG_TOOLCHAIN="manual"
 
 PKG_LIBNAME="freej2me_libretro.so"
-PKG_LIBPATH="src/libretro/${PKG_LIBNAME}"
+PKG_LIBPATH="libretro/${PKG_LIBNAME}"
 PKG_LIBVAR="FREEJ2ME_PLUS_LIB"
 
 unpack_target() {
@@ -29,20 +29,21 @@ make_target() {
   # No compilation needed - using pre-built binaries from release
   echo "Using pre-built FreeJ2ME-Plus release..."
   echo "Libretro core: ${PKG_BUILD}/${PKG_LIBPATH}"
-  echo "JAR files: ${PKG_BUILD}/build/"
+  echo "JAR files: ${PKG_BUILD}/"
   ls -la ${PKG_BUILD}/
-  ls -la ${PKG_BUILD}/src/libretro/
-  ls -la ${PKG_BUILD}/build/
+  ls -la ${PKG_BUILD}/libretro/
 }
 
 makeinstall_target() {
   mkdir -p ${SYSROOT_PREFIX}/usr/lib/cmake/${PKG_NAME}
   cp ${PKG_BUILD}/${PKG_LIBPATH} ${SYSROOT_PREFIX}/usr/lib/${PKG_LIBNAME}
-  cp ${PKG_BUILD}/src/libretro/freej2me_libretro.info ${SYSROOT_PREFIX}/usr/lib/
+  cp ${PKG_BUILD}/libretro/freej2me_libretro.info ${SYSROOT_PREFIX}/usr/lib/freej2me_libretro.info
   echo "set(${PKG_LIBVAR} ${SYSROOT_PREFIX}/usr/lib/${PKG_LIBNAME})" > ${SYSROOT_PREFIX}/usr/lib/cmake/${PKG_NAME}/${PKG_NAME}-config.cmake
   
-  # Install JAR file to sysroot for later integration
+  # Install JAR files and config to sysroot for later integration
   mkdir -p ${SYSROOT_PREFIX}/usr/share/retroarch/system
-  cp ${PKG_BUILD}/build/freej2me-lr.jar ${SYSROOT_PREFIX}/usr/share/retroarch/system/
+  cp ${PKG_BUILD}/freej2me-lr.jar ${SYSROOT_PREFIX}/usr/share/retroarch/system/
+  cp ${PKG_BUILD}/freej2me.jar ${SYSROOT_PREFIX}/usr/share/retroarch/system/
+  cp ${PKG_BUILD}/config.ini ${SYSROOT_PREFIX}/usr/share/retroarch/system/
   # Note: Core looks for freej2me-lr.jar in RetroArch's system directory
 }

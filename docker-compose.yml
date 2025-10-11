@@ -8,8 +8,16 @@ services:
     image: lakka-libreelec:latest
     container_name: lakka-build-env
     volumes:
-      # Mount source code - COMMENTED OUT to avoid case-sensitive issues on macOS
-      # - .:/lakka-libreelec:rw
+      # Mount specific directories for real-time development (avoid mounting root to prevent permission issues)
+      - ./packages:/lakka-libreelec/packages:rw
+      - ./distributions:/lakka-libreelec/distributions:rw
+      - ./projects:/lakka-libreelec/projects:rw
+      - ./scripts:/lakka-libreelec/scripts:rw
+      - ./config:/lakka-libreelec/config:rw
+      - ./tools:/lakka-libreelec/tools:rw
+      - ./licenses:/lakka-libreelec/licenses:rw
+      # Mount important files at root level
+      - ./Makefile:/lakka-libreelec/Makefile:rw
       # Persist build directories for each target/platform
       - lakka-build-generic-x86_64:/lakka-libreelec/build.Lakka-Generic.x86_64
       - lakka-build-generic-i386:/lakka-libreelec/build.Lakka-Generic.i386
