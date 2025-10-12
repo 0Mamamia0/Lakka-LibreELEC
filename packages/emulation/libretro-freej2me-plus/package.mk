@@ -40,11 +40,10 @@ makeinstall_target() {
   cp ${PKG_BUILD}/libretro/freej2me_libretro.info ${SYSROOT_PREFIX}/usr/lib/freej2me_libretro.info
   echo "set(${PKG_LIBVAR} ${SYSROOT_PREFIX}/usr/lib/${PKG_LIBNAME})" > ${SYSROOT_PREFIX}/usr/lib/cmake/${PKG_NAME}/${PKG_NAME}-config.cmake
   
-  # Install JAR files and config to sysroot for later integration
+  # Install JAR files to sysroot for later integration
   mkdir -p ${SYSROOT_PREFIX}/usr/share/retroarch/system
   cp ${PKG_BUILD}/freej2me-lr.jar ${SYSROOT_PREFIX}/usr/share/retroarch/system/
   cp ${PKG_BUILD}/freej2me.jar ${SYSROOT_PREFIX}/usr/share/retroarch/system/
-  cp ${PKG_BUILD}/config.ini ${SYSROOT_PREFIX}/usr/share/retroarch/system/
   
   # Note: Core looks for freej2me-lr.jar in RetroArch's system directory
 }
