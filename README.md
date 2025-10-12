@@ -21,12 +21,12 @@ This Lakka fork includes a fully integrated Java development environment:
 - **BusyBox compatible** - designed for LibreELEC/Lakka environment
 - **Automatic configuration** - Java available immediately after boot
 
-### J2ME Emulation (In Progress) 🔄
-Adding comprehensive J2ME (Java ME) game support:
+### J2ME Emulation ✅ 
+Comprehensive J2ME (Java ME) game support fully integrated:
 
-**Planned Features:**
+**Completed Features:**
 - **FreeJ2ME-Plus Core** - Enhanced J2ME emulator with improved compatibility
-- **Automatic JAR Detection** - Seamless J2ME game loading
+- **Automatic JAR Detection** - Seamless J2ME game loading via RetroArch
 - **Performance Optimizations** - Optimized for embedded hardware
 - **RetroArch Integration** - Full integration with Lakka's interface
 
@@ -72,13 +72,14 @@ Java environment is automatically configured with:
 - ✅ **Build System**: Successfully resolved major compilation issues
 - ✅ **Cross-platform Compatibility**: Confirmed working on target hardware
 
-### Current Work in Progress:
+### Recently Completed:
 - ✅ **FreeJ2ME-Plus Integration**: Successfully integrated FreeJ2ME-Plus emulator as built-in core
   - ✅ libretro-freej2me-plus package created and configured  
   - ✅ Core properly builds and installs with all required files (.so, .info, JAR files)
   - ✅ RetroArch integration complete - core available in Lakka interface
-  - 🔄 **Testing Phase**: Currently testing J2ME game compatibility and performance
+  - ✅ **Testing Complete**: J2ME games loading and running successfully
 - ✅ **Core Library Integration**: All dependencies properly bundled and working
+- ✅ **Build Documentation**: Complete build instructions created for community
 
 ### Future Roadmap:
 - 🎯 **PortMaster Integration**: Planning to add PortMaster for extended game porting capabilities
@@ -101,11 +102,11 @@ Java environment is automatically configured with:
 - [ ] Docker-based build environment with pre-cached dependencies
 
 ### Testing & Quality Assurance:
-- **Current Phase**: J2ME Game Compatibility Testing
-  - 🔄 Testing various J2ME games for proper loading and execution
-  - 🔄 Performance validation on Nintendo Switch hardware
-  - 🔄 RetroArch integration and UI testing
-  - 📝 Game compatibility database being compiled
+- **Completed Phase**: J2ME Game Compatibility Testing
+  - ✅ Various J2ME games tested for proper loading and execution
+  - ✅ Performance validation on Nintendo Switch and other hardware
+  - ✅ RetroArch integration and UI testing completed
+  - ✅ Core functionality verified and stable
 
 ### For Developers:
 If you're experiencing similar DNS/network issues during build:
@@ -121,7 +122,7 @@ If you're experiencing similar DNS/network issues during build:
 ### Build Status:
 - **Java Integration**: ✅ Successfully built and integrated
 - **FreeJ2ME-Plus Core**: ✅ Successfully built and integrated into Lakka
-- **Game Testing Phase**: 🔄 Currently testing J2ME games for compatibility and performance
+- **J2ME Game Support**: ✅ Testing completed - games working properly
 - **PortMaster Support**: 📋 Planned for future releases
 
 ### Contributing:
@@ -131,9 +132,23 @@ This fork welcomes contributions! Areas of focus:
 - PortMaster integration development
 - Cross-platform testing and validation
 
+## 🛠️ Building This Enhanced Version
+
+**Want to build this enhanced Lakka with Java and J2ME support?**
+
+📋 **[Complete Build Instructions → BUILD.md](BUILD.md)**
+
+This enhanced version requires building from source as it includes custom Java integration and FreeJ2ME-Plus core. The build guide covers:
+- Docker-based building (works on Windows, macOS, Linux)
+- All supported platforms (Nintendo Switch, PC, Raspberry Pi, ARM SBCs)
+- Step-by-step instructions with copy-paste commands
+- How to extract your built images
+
 ## Installation instructions
 
-Please refer to our website https://www.lakka.tv/get on how to setup Lakka.
+For standard Lakka installation, please refer to https://www.lakka.tv/get
+
+For this enhanced version, build from source using the instructions in [BUILD.md](BUILD.md)
 
 ## Support
 
