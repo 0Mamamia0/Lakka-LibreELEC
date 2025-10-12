@@ -1,0 +1,13 @@
+[Unit]
+Description=FreeJ2ME System Directory Setup
+Before=retroarch.service
+After=tmp-system.mount
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh -c 'mkdir -p /storage/.config/retroarch/system/freej2me_system/{customMIDI,customFont,SiemensData,XceData} && chown -R root:root /storage/.config/retroarch/system/freej2me_system && chmod -R 755 /storage/.config/retroarch/system/freej2me_system'
+ExecStart=/bin/sh -c 'ln -sf /storage/.config/retroarch/system/freej2me_system /tmp/system/freej2me_system 2>/dev/null || true'
+
+[Install]
+WantedBy=retroarch.target

@@ -77,7 +77,8 @@ Java environment is automatically configured with:
   - ✅ libretro-freej2me-plus package created and configured  
   - ✅ Core properly builds and installs with all required files (.so, .info, JAR files)
   - ✅ RetroArch integration complete - core available in Lakka interface
-  - 🔄 **Testing Phase**: Currently testing J2ME game compatibility and performance
+  - � **System Directory Fix**: Implementing automatic freej2me_system directory creation
+  - �🔄 **Testing Phase**: Currently testing J2ME game compatibility and performance
 - ✅ **Core Library Integration**: All dependencies properly bundled and working
 
 ### Future Roadmap:
@@ -87,6 +88,13 @@ Java environment is automatically configured with:
 - 🎯 **Enhanced Gaming Hub**: Creating comprehensive retro + modern gaming platform
 
 ### Known Issues:
+- **FreeJ2ME System Directory Issue** ⚠️: 
+  - FreeJ2ME core reports "freej2me_system directory not found" error on first run
+  - Affects logging, custom fonts, and MIDI functionality
+  - **Status**: 🔧 **Fix identified and being implemented** - will be resolved in next build
+  - **Workaround**: Manual directory creation in `/storage/.config/retroarch/system/freej2me_system/`
+  - **Timeline**: Fix will be included in upcoming release
+
 - **DNS/Network Restrictions**: Build process encounters frequent failures due to regional DNS blocking of source repositories
   - Multiple build hosts are inaccessible from certain geographic regions
   - Source downloads timeout or fail completely

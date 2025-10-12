@@ -45,5 +45,28 @@ makeinstall_target() {
   cp ${PKG_BUILD}/freej2me-lr.jar ${SYSROOT_PREFIX}/usr/share/retroarch/system/
   cp ${PKG_BUILD}/freej2me.jar ${SYSROOT_PREFIX}/usr/share/retroarch/system/
   cp ${PKG_BUILD}/config.ini ${SYSROOT_PREFIX}/usr/share/retroarch/system/
+  
+  # Create freej2me_system directory and subdirectories for core functionality
+  mkdir -p ${SYSROOT_PREFIX}/usr/share/retroarch/system/freej2me_system/customMIDI
+  mkdir -p ${SYSROOT_PREFIX}/usr/share/retroarch/system/freej2me_system/customFont
+  mkdir -p ${SYSROOT_PREFIX}/usr/share/retroarch/system/freej2me_system/SiemensData
+  mkdir -p ${SYSROOT_PREFIX}/usr/share/retroarch/system/freej2me_system/XceData
+  
+  # Create placeholder files to ensure directories exist in final image
+  touch ${SYSROOT_PREFIX}/usr/share/retroarch/system/freej2me_system/.placeholder
+  touch ${SYSROOT_PREFIX}/usr/share/retroarch/system/freej2me_system/customMIDI/.placeholder
+  touch ${SYSROOT_PREFIX}/usr/share/retroarch/system/freej2me_system/customFont/.placeholder
+  touch ${SYSROOT_PREFIX}/usr/share/retroarch/system/freej2me_system/SiemensData/.placeholder
+  touch ${SYSROOT_PREFIX}/usr/share/retroarch/system/freej2me_system/XceData/.placeholder
+  
+  # Install systemd service to setup writable directories at runtime
+  mkdir -p ${INSTALL}/usr/lib/systemd/system
+  cp ${PKG_DIR}/system.d/freej2me-setup.service ${INSTALL}/usr/lib/systemd/system/
+  
   # Note: Core looks for freej2me-lr.jar in RetroArch's system directory
+  # freej2me_system directory will be created for logs, custom fonts, and MIDI
+}
+
+post_install() {
+  enable_service freej2me-setup.service
 }
