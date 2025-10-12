@@ -18,17 +18,4 @@ makeinstall_target() {
   cp -v ${ROOT}/build.${DISTRONAME}-${DEVICE}.${TARGET_ARCH}/build/libretro-freej2me-plus-*/freej2me-lr.jar ${INSTALL}/usr/share/retroarch/system/
   cp -v ${ROOT}/build.${DISTRONAME}-${DEVICE}.${TARGET_ARCH}/build/libretro-freej2me-plus-*/freej2me.jar ${INSTALL}/usr/share/retroarch/system/
   cp -v ${ROOT}/build.${DISTRONAME}-${DEVICE}.${TARGET_ARCH}/build/libretro-freej2me-plus-*/config.ini ${INSTALL}/usr/share/retroarch/system/
-  
-  # Create freej2me_system directory structure for core functionality
-  mkdir -p ${INSTALL}/usr/share/retroarch/system/freej2me_system/customMIDI
-  mkdir -p ${INSTALL}/usr/share/retroarch/system/freej2me_system/customFont  
-  mkdir -p ${INSTALL}/usr/share/retroarch/system/freej2me_system/SiemensData
-  mkdir -p ${INSTALL}/usr/share/retroarch/system/freej2me_system/XceData
-  
-  # Create placeholder files to ensure directories exist in final image
-  touch ${INSTALL}/usr/share/retroarch/system/freej2me_system/.placeholder
-  touch ${INSTALL}/usr/share/retroarch/system/freej2me_system/customMIDI/.placeholder
-  touch ${INSTALL}/usr/share/retroarch/system/freej2me_system/customFont/.placeholder
-  touch ${INSTALL}/usr/share/retroarch/system/freej2me_system/SiemensData/.placeholder
-  touch ${INSTALL}/usr/share/retroarch/system/freej2me_system/XceData/.placeholder
 }
