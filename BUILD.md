@@ -26,7 +26,7 @@ This repository is an enhanced version of Lakka with integrated:
 ### Desktop/PC Platforms
 - **Generic/x86_64** - PC 64-bit (Intel/AMD)
 - **Generic-legacy/i386** - PC 32-bit
-- **Generic/gbm** - Modern Linux với GPU support
+- **Generic/gbm** - Modern Linux with GPU support
 - **Generic/wayland** - Wayland display server
 - **Generic/x11** - X11 display server
 
