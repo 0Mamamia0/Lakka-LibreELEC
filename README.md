@@ -117,6 +117,56 @@ If you're experiencing similar DNS/network issues during build:
 
 **Note**: This is an enhanced fork focusing on comprehensive retro and modern gaming capabilities. Active development with regular testing and improvements.
 
+## 🔬 Future Development Branch
+
+### Lakka-v5.x-new - Experimental Features Branch
+
+**📍 Branch**: [`Lakka-v5.x-new`](../../tree/Lakka-v5.x-new) - **Cutting-edge development with upcoming features**
+
+This experimental branch contains the latest development work and future features that are not yet ready for the main branch. It's where we actively develop and test new capabilities before they're merged into the stable release.
+
+#### 🚀 What's in Lakka-v5.x-new:
+- **Next-generation Features**: Experimental implementations of upcoming enhancements
+- **Advanced Integrations**: Bleeding-edge ports and emulation cores
+- **Performance Improvements**: Optimization experiments and new technologies
+- **Extended Platform Support**: Testing for additional hardware platforms
+- **Developer Previews**: Early access to features planned for future releases
+
+#### 📊 Progress Tracking:
+To see what's currently being developed and the progress of upcoming features:
+
+1. **🔍 View Active Development**: [Compare branches](../../compare/Lakka-v5.x...Lakka-v5.x-new) to see latest changes
+2. **📝 Check Commit History**: [Latest commits](../../commits/Lakka-v5.x-new) in the development branch
+3. **🐛 Development Issues**: [Open issues](../../issues) tagged with `Lakka-v5.x-new` label
+4. **🎯 Project Milestones**: [Milestones](../../milestones) showing feature completion progress
+
+#### ⚠️ Important Notes:
+- **Experimental Status**: Features in this branch are under active development
+- **Stability Warning**: May contain bugs or incomplete implementations
+- **Testing Purpose**: Primarily for developers and advanced users
+- **Regular Updates**: Frequently updated with latest experimental work
+
+#### 🤝 Contributing to Future Features:
+Interested in contributing to upcoming features? Check out the Lakka-v5.x-new branch:
+
+```bash
+# Clone and switch to development branch
+git clone https://github.com/KGBRecord/Lakka-LibreELEC.git
+cd Lakka-LibreELEC
+git checkout Lakka-v5.x-new
+
+# See what's being worked on
+git log --oneline -10
+```
+
+#### 📈 Feature Pipeline:
+The development branch follows this workflow:
+1. **Concept** → Lakka-v5.x-new (experimental implementation)
+2. **Testing** → Lakka-v5.x-new (stability testing & refinement)  
+3. **Ready** → Merge to Lakka-v5.x (stable release)
+
+**Stay updated**: Watch the repository to get notifications when new experimental features are added to Lakka-v5.x-new!
+
 ## Development Progress Tracking
 
 ### Build Status:
