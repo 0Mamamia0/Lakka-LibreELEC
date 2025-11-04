@@ -62,7 +62,7 @@ services:
       - DISTRO=Lakka
       - PROJECT=Generic
       - ARCH=x86_64
-      - MAKEFLAGS=-j$(nproc)
+      - MAKEFLAGS=-j12
       - CCACHE_DIR=/lakka-libreelec/.ccache
       # Set timezone
       - TZ=UTC
