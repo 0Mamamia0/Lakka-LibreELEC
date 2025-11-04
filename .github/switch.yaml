@@ -1,0 +1,40 @@
+name: Build Lakka Image
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - Lakka-v5.x
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        run: |
+          sudo apt update
+          sudo apt install -y docker.io docker-compose git
+
+      - name: Build Lakka Image (Nintendo Switch)
+        env:
+          PROJECT: L4T
+          DEVICE: Switch
+          ARCH: aarch64
+        run: |
+          make docker-image-release-custom PROJECT=$PROJECT DEVICE=$DEVICE ARCH=$ARCH
+
+      - name: Extract Build Output
+        run: |
+          docker run --rm -v lakka-target:/source -v $(pwd):/dest alpine cp -r /source /dest/lakka-output
+          ls -la lakka-output
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lakka-${{ env.DEVICE }}-${{ env.ARCH }}
+          path: lakka-output/
