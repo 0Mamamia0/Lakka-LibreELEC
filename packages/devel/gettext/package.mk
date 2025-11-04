@@ -4,7 +4,8 @@
 
 PKG_NAME="gettext"
 PKG_VERSION="0.21.1"
-PKG_SHA256="50dbc8f39797950aa2c98e939947c527e5ac9ebd2c1b99dd7b06ba33a6767ae6"
+#PKG_SHA256="50dbc8f39797950aa2c98e939947c527e5ac9ebd2c1b99dd7b06ba33a6767ae6"
+PKG_SHA256="c77d0da3102aec9c07f43671e60611ebff89a996ef159497ce8e59d075786b12"
 PKG_LICENSE="GPL"
 PKG_SITE="https://www.gnu.org/s/gettext/"
 #PKG_URL="https://ftp.gnu.org/pub/gnu/gettext/${PKG_NAME}-${PKG_VERSION}.tar.xz"
