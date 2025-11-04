@@ -18,7 +18,7 @@ jobs:
       - name: Set up Docker
         run: |
           sudo apt update
-          sudo apt install -y docker.io docker-compose git
+          sudo apt install docker-compose git
 
       - name: Build Lakka Image (Nintendo Switch)
         env:
